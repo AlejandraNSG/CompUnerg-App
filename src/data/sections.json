@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Cursos",
+        "url":"/courses"
+    },
+    {
+        "id":2,
+        "name":"Cursos a Pedir",
+        "url":"/courses-request"
+    },
+    {
+        "id":3,
+        "name":"Comentarios",
+        "url":"/courses"
+    },
+    {
+        "id":4,
+        "name":"Notificaciones",
+        "url":"/courses"
+    },
+    {
+        "id":5,
+        "name":"Perfil",
+        "url":"/courses"
+    },
+    {
+        "id":6,
+        "name":"Cerrar Sesión",
+        "url":"/courses"
+    }
+]

@@ -1,0 +1,81 @@
+.mainLayout{
+    display: flex !important;
+    background-color: rgb(230, 230, 230);
+}
+
+.navBar{
+    width: 20%;
+    display: flex !important;
+    padding: 5px;
+}
+
+.navBar nav{
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+
+    /* background-color: rgb(29, 29, 29); */
+    background-image: linear-gradient(to bottom right, var(--color3), var(--color4));
+    width: 90%;
+    border-radius: 10px;
+}
+
+.navBar nav div{
+    /* background-color: rgb(88, 88, 88); */
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 6px;
+}
+
+.navBar nav div p, .navBar nav a{
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.dinamic-section{
+    width: 80%;
+    display:flex !important;
+    flex-direction: column;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.dinamic-section .LoggedHeader{
+    width: 100%;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.dinamic-section .LoggedHeader .header-content{
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.dinamic-section .LoggedHeader .header-content .title-content h3{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.dinamic-section .LoggedHeader .header-content .buttons-content button{
+    margin: 0 5px;
+}
+
+.navBar nav a, .navBar nav{
+    color: white;
+}
+
+.logo-in-nav{
+    border-radius: 50%;
+    box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, .3);
+}

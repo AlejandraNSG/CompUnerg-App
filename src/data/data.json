@@ -1,0 +1,190 @@
+{
+  "Header": {
+    "title": "We are a Landing Page",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+  },
+  "About": {
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Why": [
+      "Desarrollo Web",
+      "Frontend",
+      "HTML5/CSS",
+      "JavaSCript",
+      "React.js", 
+      "Angular",
+      "Vue.js"
+      
+    ],
+    "Why2": [
+      "Base de Datos",
+      "MongoDB, MariaDB",
+      "Redes y Telecomunicaciones",
+      "Seguridad Informatica: Forense",
+      "Blockchain y Criptomonedas"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "React.js",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Students",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Node.js",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Area de Ingenieria en Sistema (AIS)",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "PHP",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Students",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Phyton",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Redes y Telecomunicaciones",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Vue.js",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-wordpress",
+      "name": "Desarrollo Web (Full Stack )",
+      "text": "Variedad de cursos para el desarrollo de sitios web (front end), así como la programación interna del sitio (back end)."
+    },
+    {
+      "icon": "fa fa-desktop",
+      "name": "Uso de Herramientas Tecnologicas (Software)",
+      "text": "Desarrollo de habilidades para el uso de herramientas tecnologicas."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Documentacion y Recursos Didacticos",
+      "text": "Variedades de videos y material practico relacionados al area de computacion."
+    },
+    {
+      "icon": "fa fa-database",
+      "name": "Bases de Datos",
+      "text": "Cursos introductorios de bases de datos relacionales, el cual abarca los fundamentos teóricos y prácticos de su diseño, implementación, consulta, operación, y recuperación."
+    },
+    {
+      "icon": "fa fa-university",
+      "name": "Material para el desarrollo de software del (AIS)",
+      "text": "Cursos de diseño de software donde se aprendera a planificar la solución y la representación de una aplicación, bajo la finalidad de consolidar la disminución de riesgos"
+    },
+    {
+      "icon": "fa fa-signal",
+      "name": "Redes y Telecomunicaciones (TIC)",
+      "text": "Cursos en distintos niveles de redes que permiten analizar, implementar y gestionar proyectos de sistemas de comunicaciones que involucran las TIC"
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Estudiante del 5to Semestre de la Facultad del AIS. Destacado por el area del desarrollo web.\"",
+      "name": "Juan Pablo Gonzalez"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Estudiante del 8vo Semestre de la Facultad del AIS. Destacado por el area de redes y telecomunicaciones\"",
+      "name": "Jesus Montesuma"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Estudiante del 1er Semestre de la Facultad del AIS.\"",
+      "name": "Salome Does"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Estudiante del 10mo Semestre de la Facultad del AIS. Full stack develop\"",
+      "name": "Sebastian Rosseu"
+    },
+
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Estudiante del 3er Semestre de la Facultad del AIS. Destacada por el area de seguridad informatica\"",
+      "name": "Alejandra Goncalves"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Estudiante del 2do Semestre de la Facultad del AIS. \"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "Profesores",
+      "job": "Grupo de Desarrolladores Freelance"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Miguel Padron",
+      "job": "Senior Full Stack Developer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Profesores",
+      "job": "Senior Developer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Willian Cortez",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "2301, Balneario Río Via Camburito, San Juan de Los Morros, Guárico, Venezuela",
+    "phone": "+58 246-4310831",
+    "email": "aisunerg@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Comparte",
+      "text": "Conocimiento, material y nuevas ideas con tus amigos y profesores."
+    },
+    {
+      "icon": "fa fa-joomla",
+      "title": "Explora",
+      "text": "Un mundo de herramientas en el campo informatico"
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "Socializa",
+      "text": "Comparte tus dudas y aprendizaje en nuestro sitio"
+    },
+    {
+      "icon": "fa fa-magic",
+      "title": "Diseña",
+      "text": "Crea lo que te imaginas."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Python de Básico a Intermedio",
+        "description": "Curso para aprender python desde 0 hasta Intermedio",
+        "tutor":"Prof. Miguel Hernandez",
+        "duration":"5:55"
+    },
+    {
+        "id": 2,
+        "name": "Python de Intermedio a Avanzado",
+        "description": "Curso para aprender python desde Intermedio hasta Avanzado",
+        "tutor":"Prof. Miguel Hernandez",
+        "duration":"5:55"
+    },
+    {
+        "id": 3,
+        "name": "Javascript de Básico a Intermedio",
+        "description": "Curso para aprender Javascript desde 0 hasta Intermedio",
+        "tutor":"Prof. William Cortez",
+        "duration":"5:55"
+    },
+    {
+        "id": 4,
+        "name": "Javascript de Intermedio a Avanzado",
+        "description": "Curso para aprender Javascript desde Intermedio hasta Avanzado",
+        "tutor":"Prof. William Cortez",
+        "duration":"5:55"
+    },
+    {
+        "id": 5,
+        "name": "PHP de Básico a Intermedio",
+        "description": "Curso para aprender PHP desde 0 hasta Intermedio",
+        "tutor":"Prof. Miguel Padron",
+        "duration":"5:55"
+    },
+    {
+        "id": 6,
+        "name": "PHP de Intermedio a Avanzado",
+        "description": "Curso para aprender PHP desde Intermedio hasta Avanzado",
+        "tutor":"Prof. Miguel Padron",
+        "duration":"5:55"
+    },
+    {
+        "id": 7,
+        "name": "Redes de Básico a Intermedio",
+        "description": "Curso para aprender Redes desde 0 hasta Intermedio",
+        "tutor":"Prof. Adrianne Rangel",
+        "duration":"5:55"
+    },
+    {
+        "id": 8,
+        "name": "Redes de Intermedio a Avanzado",
+        "description": "Curso para aprender Redes desde Intermedio hasta Avanzado",
+        "tutor":"Prof. Adrianne Rangel",
+        "duration":"5:55"
+    },
+    {
+        "id": 9,
+        "name": "CiberSeguridad de Básico a Intermedio",
+        "description": "Curso para aprender CiberSeguridad desde 0 hasta Intermedio",
+        "tutor":"Prof. Cesar Montilla",
+        "duration":"5:55"
+    },
+    {
+        "id": 10,
+        "name": "CiberSeguridad de Intermedio a Avanzado",
+        "description": "Curso para aprender CiberSeguridad desde Intermedio hasta Avanzado",
+        "tutor":"Prof. Cesar Montilla",
+        "duration":"5:55"
+    }
+]
