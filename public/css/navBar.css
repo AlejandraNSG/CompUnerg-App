@@ -1,6 +1,7 @@
 .mainLayout{
     display: flex !important;
     background-color: rgb(230, 230, 230);
+    height: 100vh;
 }
 
 .navBar{
@@ -39,8 +40,8 @@
     width: 80%;
     display:flex !important;
     flex-direction: column;
-    height: 100vh;
-    overflow: scroll;
+    height: 95vh;
+    /* overflow: scroll; */
     overflow-x: hidden;
 }
 

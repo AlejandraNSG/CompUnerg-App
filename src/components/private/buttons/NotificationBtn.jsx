@@ -6,7 +6,7 @@ const NotificationBtn = ()=>{
     return(
         <>
             <Link
-                to="/notification"
+                to="/home/notifications"
             >
                 <img src="/public/svg/notification.svg" alt="notification" width="30px"/>
             </Link>

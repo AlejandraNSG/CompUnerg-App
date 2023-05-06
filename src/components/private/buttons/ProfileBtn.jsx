@@ -6,7 +6,7 @@ const ProfileBtn = ()=>{
     return(
         <>
             <Link
-                to="/perfil"
+                to="/home/profile"
             >
                 <img src="/public/svg/person.svg" alt="profile" width="30px"/>
             </Link>
