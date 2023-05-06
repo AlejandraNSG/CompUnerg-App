@@ -43,7 +43,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/courses-request"
+                            to="/home/request-courses"
                         >
                             <div>
                                 <p>
@@ -52,7 +52,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/comments"
+                            to="/home/comments"
                         >
                             <div>
                                 <p>
@@ -61,7 +61,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/notifications"
+                            to="/home/notifications"
                         >
                             <div>
                                 <p>
@@ -70,7 +70,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/perfil"
+                            to="/home/profile"
                         >
                             <div>
                                 <p>

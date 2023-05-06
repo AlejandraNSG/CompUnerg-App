@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":2,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":3,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":4,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":5,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":6,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":7,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    },
+    {
+        "id":8,
+        "body": "Este es mi comentario",
+        "avatar":"/public/img/about.jpg",
+        "date": "04/05/2023"
+    }
+]
