@@ -18,6 +18,7 @@ import RequestCourses from "./pages/private/RequestCourses.jsx";
 import Comments from "./pages/private/Comments.jsx";
 import Notifications from "./pages/private/Notifications.jsx";
 import Profile from "./pages/private/Profile.jsx";
+import RequestCourse from "./pages/private/RequestCourse.jsx";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="comments" element={<Comments/>}/>
             <Route path="notifications" element={<Notifications/>}/>
             <Route path="profile" element={<Profile/>}/>
+            <Route path="request-courses/:id" element={<RequestCourse/>}/>
           </Route>
         </Routes>
     </BrowserRouter>
