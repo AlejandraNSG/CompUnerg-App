@@ -2,6 +2,9 @@
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router';
 
+// Componentes
+import Poll from '../../components/private/request-courses/Poll.jsx'
+
 const RequestCourse = () => {
 
     // States
@@ -28,7 +31,7 @@ const RequestCourse = () => {
                     })
 
                     // Si hay data, se colocan los datos, de lo contrario, se armma un objeto
-                    // data !== null ? setReqCourse(data) : setReqCourse({message:"NO SE ENCUENTRA EL CURSO", error:true})
+                    data !== null ? setReqCourse(data) : setReqCourse({message:"NO SE ENCUENTRA EL CURSO", error:true})
                 })
         }
 
@@ -42,11 +45,7 @@ const RequestCourse = () => {
                 {
                     reqCourse !== null ?
                         <>
-                            <div>
-                                <p>
-
-                                </p>
-                            </div>
+                            <Poll poll={reqCourse}/>
                         </> 
                         :
                         <>

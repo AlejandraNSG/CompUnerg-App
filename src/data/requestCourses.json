@@ -8,19 +8,23 @@
             {
                 "id":1,
                 "name":"Python",
-                "comment":""
+                "comment":"",
+                "voted":false
             },
             {
                 "id":2,
                 "name":"Javascript",
-                "comment":""
+                "comment":"",
+                "voted":false
             },
             {
                 "id":3,
                 "name":"Otro",
-                "comment":""
+                "comment":"",
+                "voted":false
             }
-        ]
+        ],
+        "votedPoll":false
     },
     {
         "id":2,
@@ -31,18 +35,22 @@
             {
                 "id":1,
                 "name":"Solo Fundamentos",
-                "comment":""
+                "comment":"",
+                "voted":false
             },
             {
                 "id":2,
                 "name":"Fundamentos y un poco más",
-                "comment":""
+                "comment":"",
+                "voted":false
             },
             {
                 "id":3,
                 "name":"Otro",
-                "comment":""
+                "comment":"Redes y Telecomunicaciones",
+                "voted":true
             }
-        ]
+        ],
+        "votedPoll":true
     }
 ]
