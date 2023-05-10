@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "title":"Curso de Programación",
+        "description":"Curso de Programación para empezar desde 0.",
+        "votes":20,
+        "options":[
+            {
+                "id":1,
+                "name":"Python",
+                "comment":"",
+                "voted":false
+            },
+            {
+                "id":2,
+                "name":"Javascript",
+                "comment":"",
+                "voted":false
+            },
+            {
+                "id":3,
+                "name":"Otro",
+                "comment":"",
+                "voted":false
+            }
+        ],
+        "votedPoll":false
+    },
+    {
+        "id":2,
+        "title":"Curso de Redes",
+        "description":"Curso de Redes para empezar desde 0.",
+        "votes":10,
+        "options":[
+            {
+                "id":1,
+                "name":"Solo Fundamentos",
+                "comment":"",
+                "voted":false
+            },
+            {
+                "id":2,
+                "name":"Fundamentos y un poco más",
+                "comment":"",
+                "voted":false
+            },
+            {
+                "id":3,
+                "name":"Otro",
+                "comment":"Redes y Telecomunicaciones",
+                "voted":true
+            }
+        ],
+        "votedPoll":true
+    }
+]

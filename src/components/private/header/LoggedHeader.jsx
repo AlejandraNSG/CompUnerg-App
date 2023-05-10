@@ -1,7 +1,7 @@
 // import {useEffect} from 'react'
 // import {useNavigate} from 'react-router-dom'
 import ProfileBtn from '../buttons/ProfileBtn.jsx';
-import NotificationBtn from '../buttons/NotificationBtn.jsx';
+// import NotificationBtn from '../buttons/NotificationBtn.jsx';
 
 const LoggedHeader = () => {
     return (
@@ -10,7 +10,7 @@ const LoggedHeader = () => {
                 <div className="header-content">
                     <div>
                         <p>
-                            Location
+                            CompUnerg
                         </p>
                     </div>
 
@@ -22,7 +22,7 @@ const LoggedHeader = () => {
 
                     <div className="buttons-content">
                         <ProfileBtn />
-                        <NotificationBtn/>
+                        {/* <NotificationBtn/> */}
                     </div>
                 </div>
             </header>

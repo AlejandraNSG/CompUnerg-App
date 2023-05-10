@@ -1,7 +1,40 @@
+// Importaciones
+import {useState, useEffect} from 'react';
+
+import ReqCourseCard from '../../components/private/request-courses/ReqCourseCard.jsx'
+
 const RequestCourses = () => {
+
+    const [reqCourses, setReqCourses] = useState([]);
+
+    useEffect(()=>{
+        // Cambio de Titulo en la seccion
+        document.querySelector('.title-section').textContent = "Cursos a Pedir";
+
+        const findReqCourses = ()=>{
+            fetch("/src/data/requestCourses.json")
+                .then(data => data.json())
+                .then(res => setReqCourses(res))
+                .catch(err => console.log(err))
+
+            console.log(reqCourses)
+        }
+
+        findReqCourses();
+    }, [])
+
+    // Retorno
     return (
         <>
-            <div>RequestCourses</div>
+            <section className="request-courses-section">
+                <div className="req-courses">
+                    {
+                        reqCourses.map((course, i) => {
+                            return <ReqCourseCard key={i} course={course}/>
+                        })
+                    }
+                </div>
+            </section>
         </>
     )
 }

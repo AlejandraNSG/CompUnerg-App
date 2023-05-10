@@ -60,7 +60,7 @@ const NavBar = () => {
                                 </p>
                             </div>
                         </Link>
-                        <Link
+                        {/* <Link
                             to="/home/notifications"
                         >
                             <div>
@@ -68,7 +68,7 @@ const NavBar = () => {
                                     Notificaciones
                                 </p>
                             </div>
-                        </Link>
+                        </Link> */}
                         <Link
                             to="/home/profile"
                         >
@@ -78,11 +78,15 @@ const NavBar = () => {
                                 </p>
                             </div>
                         </Link>
-                        <div>
-                            <p>
-                                Salir
-                            </p>
-                        </div>
+                        <Link 
+                            to="/login"
+                        >
+                            <div>
+                                <p>
+                                    Salir
+                                </p>
+                            </div>
+                        </Link>
                     </div>
                 </nav>
             </section>
