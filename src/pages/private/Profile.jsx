@@ -44,7 +44,7 @@ const Profile = () => {
                 .catch(err => console.log(err))
         }
 
-        // Función para encontrar los cursos
+        // Función para encontrar los cursos ya solicitados
         const findCourses = () =>{
             fetch('/src/data/courses.json')
                 .then(data => data.json())

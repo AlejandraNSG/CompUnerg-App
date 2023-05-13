@@ -13,7 +13,7 @@ const Comments = () => {
         // Cambio del nombre del titulo
         document.querySelector(".title-section").textContent = "COMENTARIOS";
 
-        // Llamada la funcion
+        // Llamas la funcion
         findComments();
     }, [])
 

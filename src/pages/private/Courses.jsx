@@ -28,7 +28,7 @@ const Courses = () => {
                 {/* <nav>
 
                 </nav> */}
-                {/* Galeria de Cursos */}
+                {/* Aqui la Galeria de Cursos */}
                 
                     { courses.length > 0 ?
                             courses.map( (course, i) => { return <CourseCard key={i} course={course}/> })

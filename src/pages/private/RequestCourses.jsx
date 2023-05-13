@@ -8,7 +8,7 @@ const RequestCourses = () => {
     const [reqCourses, setReqCourses] = useState([]);
 
     useEffect(()=>{
-        // Cambio de Titulo en la seccion
+        // Cambio de titulo en la seccion
         document.querySelector('.title-section').textContent = "Cursos a Pedir";
 
         const findReqCourses = ()=>{
@@ -23,7 +23,7 @@ const RequestCourses = () => {
         findReqCourses();
     }, [])
 
-    // Retorno
+    // Retorno de la seccion
     return (
         <>
             <section className="request-courses-section">

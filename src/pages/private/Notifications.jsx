@@ -1,9 +1,11 @@
-const Notifications = () => {
-    return (
-        <>
-            <div>Notifications</div>
-        </>
-    )
-}
+/* Este apartado estaria las notificaciones perooooo pasaron cosas*/
 
-export default Notifications
+const Notifications = () => {
+  return (
+    <>
+      <div>Notifications</div>
+    </>
+  );
+};
+
+export default Notifications;

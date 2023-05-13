@@ -9,7 +9,7 @@ export const Header = (props) => {
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
                 <h1>
-                  CompUnerg: PLataforma Social
+                  CompUnerg: Plataforma Social
                   <span></span>
                 </h1>
                 <p> "Vive como si fueses a morir mañana, aprende como si fueses a vivir siempre. La forma más segura de tener éxito es intentarlo una vez más".</p>
