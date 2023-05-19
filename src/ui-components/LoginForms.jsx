@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 import {
   Box,
@@ -42,22 +43,55 @@ const LoginForm = ({ setAuth }) => {
     password: Yup.string().required("Password is required"),
   });
 
+  const handleLogin = async (data) => {
+    console.log("data: ", data);
+    try {
+      const result = await axios.post(
+        "http://localhost:4000/api/v1/signin",
+        data,
+      );
+      console.log("result: ", result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleGetUsers = async () => {
+    try {
+      const result = await axios.get("http://localhost:4000/api/v1/users", {
+        headers: {
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGM4MGQwNWVjM2IyNzIwZjA1MTc1YSIsImVtYWlsIjoiZXNhYXJhZmFlbEBob3RtYWlsLmNvbSIsInJvbGVzIjpbIkFkbWluIiwiU3R1ZGVudCJdLCJpYXQiOjE2ODQ0NjIzMzksImV4cCI6MTY4NDQ2NTkzOX0.Oe_Qh6xuf-L5EVsK5M_LEiZ9Tc256PFhbHVn73G6fMg",
+        },
+      });
+      console.log("result: ", result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-      remember: true,
+      // remember: true,
     },
     validationSchema: LoginSchema,
     onSubmit: () => {
       console.log("submitting...");
-      setTimeout(() => {
-        console.log("submited!!");
-        setAuth(true);
-        navigate(from, { replace: true });
-      }, 2000);
+      console.log("datos del formulario: ", formik.values);
+      handleLogin(formik.values);
+      // setTimeout(() => {
+      //   console.log("submited!!");
+      //   setAuth(true);
+      //   navigate(from, { replace: true });
+      // }, 2000);
     },
   });
+
+  useEffect(() => {
+    handleGetUsers();
+  }, []);
 
   const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } =
     formik;
@@ -130,7 +164,7 @@ const LoginForm = ({ setAuth }) => {
               justifyContent="space-between"
               sx={{ my: 2 }}
             >
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={
                   <Checkbox
                     {...getFieldProps("remember")}
@@ -138,14 +172,9 @@ const LoginForm = ({ setAuth }) => {
                   />
                 }
                 label="Remember me"
-              />
+              /> */}
 
-              <Link
-                component={RouterLink}
-                variant="subtitle2"
-                to="/forgot"
-                
-              >
+              <Link component={RouterLink} variant="subtitle2" to="/forgot">
                 Forgot password?
               </Link>
             </Stack>

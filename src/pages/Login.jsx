@@ -7,7 +7,6 @@ import SocialAuth from "../ui-components/SocialIconAuth";
 import Logo from "../ui-components/Logo";
 import { motion } from "framer-motion";
 
-////////////////Aqui los estilos porque aja//////////////////
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
   height: "100vh",
