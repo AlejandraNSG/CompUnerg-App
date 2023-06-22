@@ -1,8 +1,55 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 import FormsForgot from "../ui-components/FormsForgot";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    backgroundColor: "#268c8c",
+    padding: "2rem",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    maxWidth: "400px", // Aumenta el ancho máximo del contenedor
+    width: "100%",
+    backgroundColor: "#FFFFFF",
+    borderRadius: "10px",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    padding: "2rem", // Aumenta el relleno del contenedor
+  },
+  logo: {
+    marginBottom: "2rem",
+    width: "80%",
+    maxWidth: "300px",
+  },
+  textField: {
+    marginBottom: "2rem",
+    width: "100%",
+    fontSize: "2rem",
+  },
+  button: {
+    backgroundColor: "#4D8FB9",
+    color: "#FFFFFF",
+    width: "100%",
+    "&:hover": {
+      backgroundColor: "#3B6F94",
+    },
+    fontSize: "1.5rem",
+  },
+}));
+
 const Forgot = () => {
+  const classes = useStyles();
   const [email, setEmail] = useState("");
   const [validate, setValidate] = useState({});
 
@@ -39,69 +86,57 @@ const Forgot = () => {
     }
   };
 
-  
   return (
-    <div className="rowling g-50 auth-wrapper-center">
-      <div className="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
-        <div className="auth-background-holder"></div>
-        <div className="auth-background-mask"></div>
-      </div>
-
-      <div className="Wrapper-forgot col-12 col-md-5 col-lg-6 auth-main-col text-center justifyContent-center">
-        <div className=" d-flex flex-column align-content">
-          <div className="TEA auth-body center mx-center">
-            <h3> Reestablezca su contraseña </h3>
-            <div className="auth-form-container text-center">
-              <form
-                className="LAPARTEDEABAJO"
-                method="POST"
-                onSubmit={forgotPassword}
-                autoComplete={"off"}
-              >
-                <div className="email mb-3">
-                  <input
-                    type="email"
-                    className={`form-control ${
-                      validate.validate && validate.validate.email
-                        ? "is-invalid "
-                        : ""
-                    }`}
-                    id="email"
-                    name="email"
-                    value={email}
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-
-                  <div
-                    className={`invalid-feedback text-center ${
-                      validate.validate && validate.validate.email
-                        ? "d-block"
-                        : "d-none"
-                    }`}
-                  >
-                    {validate.validate && validate.validate.email
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <img src="/Assets/icon_logo.png" alt="Logo" className={classes.logo} />
+        <div className="TEA auth-body center mx-center">
+          <h3 className="forgot-title">Reestablezca su contraseña</h3>
+          <div className="auth-form-container text-center">
+            <form
+              className="LAPARTEDEABAJO"
+              method="POST"
+              onSubmit={forgotPassword}
+              autoComplete={"off"}
+            >
+              <div className="email mb-3">
+                <TextField
+                  id="email"
+                  name="email"
+                  label="Email"
+                  variant="outlined"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  error={validate.validate && validate.validate.email}
+                  helperText={
+                    validate.validate && validate.validate.email
                       ? validate.validate.email[0]
-                      : ""}
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="btn-Enviarcorreo btn btn-custom btn-lg page-scrol "
-                  >
-                    Enviar Correo
-                  </button>
-                </div>
-              </form>
-
-              <hr />
-              <div className="auth-option text-center pt-2">
-                <Link className="text-link" to="/login">
-                  Back to login
-                </Link>
+                      : ""
+                  }
+                  className={classes.textField}
+                  InputProps={{
+                    style: { fontSize: "2rem" },
+                  }}
+                />
               </div>
+
+              <div className="text-center">
+                <Button
+                  type="submit"
+                  className={`btn-Enviarcorreo page-scrol ${classes.button}`}
+                  variant="contained"
+                  style={{ fontSize: "1.5rem" }}
+                >
+                  Enviar Correo
+                </Button>
+              </div>
+            </form>
+
+            <hr />
+            <div className="auth-option text-center pt-2">
+              <Link className="text-link" to="/">
+                Volver al inicio
+              </Link>
             </div>
           </div>
         </div>

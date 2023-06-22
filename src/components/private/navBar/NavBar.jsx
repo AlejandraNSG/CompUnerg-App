@@ -60,15 +60,16 @@ const NavBar = () => {
                                 </p>
                             </div>
                         </Link>
-                        {/* <Link
-                            to="/home/notifications"
+                        { <Link
+                            to="/home/crud"
                         >
                             <div>
                                 <p>
-                                    Notificaciones
+                                    Herramientas
                                 </p>
                             </div>
-                        </Link> */}
+                        </Link> }
+              
                         <Link
                             to="/home/profile"
                         >

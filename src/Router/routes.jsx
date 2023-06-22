@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Forgot from "../pages/Forgot";
 import Courses from "../pages/Courses.jsx";
+import Ressetpassword from "../pages/Ressetpassword";
 
 
 export const router = createBrowserRouter([
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: "esta vista no es, fueraaaa!",
-  },  
+  },
   {
     path: "/login",
     element: <Login />,
@@ -28,15 +29,20 @@ export const router = createBrowserRouter([
     errorElement: "ERRORRR!",
   },
   {
-    path:"/home",
-    element: <Login/>,
-    errorElement:"ERRORRR!"
+    path: "/resset-password",
+    element: < Ressetpassword/>,
+    errorElement: "ERRORRR!",
   },
   {
-    path:"/courses",
-    element: <Courses/>,
+    path: "/home",
+    element: <Login />,
     errorElement: "ERRORRR!",
-  }
+  },
+  {
+    path: "/courses",
+    element: <Courses />,
+    errorElement: "ERRORRR!",
+  },
 ]);
 
 
