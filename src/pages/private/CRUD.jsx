@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(4),
     maxWidth: 800,
     width: "100%",
-    background: "#00b4db",
+    background: "#ffff", 
     color: "#fff",
   },
   paper: {
