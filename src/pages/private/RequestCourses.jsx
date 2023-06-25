@@ -8,19 +8,20 @@ const RequestCourses = () => {
     const [reqCourses, setReqCourses] = useState([]);
 
     useEffect(()=>{
-        // Cambio de titulo en la seccion
-        document.querySelector('.title-section').textContent = "Cursos a Pedir";
+      // Cambio de titulo en la seccion
+      document.querySelector(".title-section").textContent = "Cursos a Pedir";
 
-        const findReqCourses = ()=>{
-            fetch("/src/data/requestCourses.json")
-                .then(data => data.json())
-                .then(res => setReqCourses(res))
-                .catch(err => console.log(err))
+      const findReqCourses = () => {
+        fetch("http://localhost:4000/typecourse")
+          .then((data) => data.json())
+          .then((res) => setReqCourses(res))
+          .catch((err) => console.log(err));
 
-            console.log(reqCourses)
-        }
+        console.log(reqCourses);
+      };
 
-        findReqCourses();
+      findReqCourses();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // Retorno de la seccion

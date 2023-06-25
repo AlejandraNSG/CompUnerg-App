@@ -2,49 +2,44 @@ import { useEffect, useState } from 'react';
 import CourseCard from '/src/components/private/courses/CourseCard.jsx';
 
 const Courses = () => {
+  const [courses, setCourses] = useState([]);
 
-    // UseStates
-    const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    // const getCourses = () => {
+    //   fetch("/src/data/courses.json")
+    //     .then((data) => data.json())
+    //     .then((result) => setCourses(result))
+    //     .catch((err) => console.log(err));
+    // };
 
-    // Uso de uso del Efecto
-    useEffect(()=>{
+    const getCourse = () => {
+      fetch("http://localhost:4000/courses")
+        .then((data) => data.json())
+        .then((result) => setCourses(result))
+        .catch((err) => console.log(err));
+    };
 
-        document.querySelector(".title-section").textContent = "CURSOS"
+    getCourse();
+    // getCourses();
+  }, []);
 
-        const getCourses = ()=>{
-            fetch('/src/data/courses.json')
-                .then(data => data.json())
-                .then(result => setCourses(result))
-                .catch(err => console.log(err))
-        }
-
-        getCourses();
-    }, []);
-
-    return (
-        <>
-            <section className="courses-section">
-                {/* Navegador Lateral Izquierdo*/}
-                {/* <nav>
-
-                </nav> */}
-                {/* Aqui la Galeria de Cursos */}
-                
-                    { courses.length > 0 ?
-                            courses.map( (course, i) => { return <CourseCard key={i} course={course}/> })
-                        :
-                            <>
-                                <div className="not-courses">
-                                    <p>
-                                        NO HAY CURSOS DISPONIBLES EN ESTE MOMENTO
-                                    </p>
-                                </div>
-                            </>
-                    }
-                
-            </section>
-        </>
-    )       
-}
+  return (
+    <>
+      <section className="courses-section">
+        {courses?.length ? (
+          courses.map((course, i) => {
+            return <CourseCard key={i} course={course} />;
+          })
+        ) : (
+          <>
+            <div className="not-courses">
+              <p>NO HAY CURSOS DISPONIBLES EN ESTE MOMENTO</p>
+            </div>
+          </>
+        )}
+      </section>
+    </>
+  );
+};
 
 export default Courses
