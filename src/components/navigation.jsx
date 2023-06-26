@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Navigation = (props) => {
   return (
@@ -65,23 +66,19 @@ export const Navigation = (props) => {
           </ul>
           <ul></ul>
           <div className="navbar-right">
-            <button
-              type="button"
+            <RouterLink
+              to="/login"
               className="btn-Sig-in btn btn-custom btn-lg page-scroll"
             >
-              {""}
-               <a href="./login" className="page-scroll"> </a>
-              Iniciar Sesion{" "}
-            
-            </button>
-            <button
-              type="button"
+              Iniciar Sesión
+            </RouterLink>
+
+            <RouterLink
+              to="/signup"
               className="btn-navbar-reg btn btn-custom btn-lg page-scroll"
             >
-              {" "}
-              Registrarse{" "}
-            
-            </button>
+              Registrarse
+            </RouterLink>
           </div>
         </div>
       </div>

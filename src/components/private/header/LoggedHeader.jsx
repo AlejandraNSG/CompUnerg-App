@@ -1,21 +1,16 @@
-import {useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+// import {useEffect} from 'react'
+// import {useNavigate} from 'react-router-dom'
+import ProfileBtn from '../buttons/ProfileBtn.jsx';
+// import NotificationBtn from '../buttons/NotificationBtn.jsx';
 
 const LoggedHeader = () => {
-
-    useEffect(()=>{
-
-    },[])
-
-    const navigate = useNavigate();
-
     return (
         <>
             <header className="LoggedHeader">
                 <div className="header-content">
                     <div>
                         <p>
-                            Location
+                            CompUnerg
                         </p>
                     </div>
 
@@ -26,17 +21,8 @@ const LoggedHeader = () => {
                     </div>
 
                     <div className="buttons-content">
-                        <button
-                            onClick={()=> navigate("/perfil")}
-                        >
-                            Perfil
-                        </button>
-
-                        <button
-                            onClick={()=> navigate("/notifications")}
-                        >
-                            Notificaciones
-                        </button>
+                        <ProfileBtn />
+                        {/* <NotificationBtn/> */}
                     </div>
                 </div>
             </header>

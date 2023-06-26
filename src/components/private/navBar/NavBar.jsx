@@ -43,7 +43,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/courses-request"
+                            to="/home/request-courses"
                         >
                             <div>
                                 <p>
@@ -52,7 +52,7 @@ const NavBar = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/comments"
+                            to="/home/comments"
                         >
                             <div>
                                 <p>
@@ -60,17 +60,18 @@ const NavBar = () => {
                                 </p>
                             </div>
                         </Link>
-                        <Link
-                            to="/notifications"
+                        { <Link
+                            to="/home/crud"
                         >
                             <div>
                                 <p>
-                                    Notificaciones
+                                    Herramientas
                                 </p>
                             </div>
-                        </Link>
+                        </Link> }
+              
                         <Link
-                            to="/perfil"
+                            to="/home/profile"
                         >
                             <div>
                                 <p>
@@ -78,11 +79,15 @@ const NavBar = () => {
                                 </p>
                             </div>
                         </Link>
-                        <div>
-                            <p>
-                                Salir
-                            </p>
-                        </div>
+                        <Link 
+                            to="/login"
+                        >
+                            <div>
+                                <p>
+                                    Salir
+                                </p>
+                            </div>
+                        </Link>
                     </div>
                 </nav>
             </section>

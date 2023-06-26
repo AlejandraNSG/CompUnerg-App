@@ -1,8 +1,8 @@
 .courses-section{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2px;
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 25px;
+    /* grid-auto-rows: minmax(100px, auto); */
     
     overflow: scroll;
     width: 100%;
@@ -10,19 +10,27 @@
 }
 
 .course-section .course-card{
-    grid-column: 3;
-    grid-row: 4;
+    grid-column: 2;
+    grid-row: 3;
 }
 
 .course-card{
-    width: 350px;
+    width: 300px;
     height: 300px;
     background-color: white;
-    margin: 5px;
+    /* gap: 10; */
+    margin: 10px 0px;
+    /* margin: 5px; */
 
     
     display: flex;
     flex-direction: column;
+    transition: all .2s ease;
+}
+
+.course-card:hover{
+    transform: scale(1.05);
+    cursor:pointer;
 }
 
 .course-card .course-img{
@@ -79,7 +87,6 @@
 .not-courses p{
     font-size: 25px;
 }
-
 
 /* #page-top{
     background-color: rgb(78, 77, 77);
