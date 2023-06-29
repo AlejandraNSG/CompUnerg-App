@@ -1,26 +1,23 @@
 import { useEffect, useState } from 'react';
 import CourseCard from '/src/components/private/courses/CourseCard.jsx';
+import clienteFrontend from '../../config/axios.jsx';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    // const getCourses = () => {
-    //   fetch("/src/data/courses.json")
-    //     .then((data) => data.json())
-    //     .then((result) => setCourses(result))
-    //     .catch((err) => console.log(err));
-    // };
+    // Obtiene los cursos
+    const getCourses = async() => {
+      // Peticion con axios para obtener los cursos
+      const { data } = await clienteFrontend('/courses');
 
-    const getCourse = () => {
-      fetch("http://localhost:4000/courses")
-        .then((data) => data.json())
-        .then((result) => setCourses(result))
-        .catch((err) => console.log(err));
+      // Se establecen los cursos 
+      setCourses(data['courses']);
+      console.log( data );
     };
 
-    getCourse();
-    // getCourses();
+    // Llamada para obtener los cursos
+    getCourses();
   }, []);
 
   return (

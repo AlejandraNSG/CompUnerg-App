@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 
 // Componentes privados
 import CommentCard from '../../components/private/comments/CommentsCard.jsx';
+import clienteFrontend from '../../config/axios.jsx';
 
 const Comments = () => {
 
@@ -18,7 +19,17 @@ const Comments = () => {
     }, [])
 
     // Funcion para traer los comentarios
-    const findComments = () =>{
+    const findComments = async() =>{
+
+        const {data} = await clienteFrontend('/all/comments', {
+            headers:{
+                Authorization:
+                'aquiVaElToken'
+            }
+        });
+
+        console.log(data);
+
         fetch('/src/data/comments.json')
             .then(data => data.json())
             .then(res => setComments(res))
@@ -26,7 +37,7 @@ const Comments = () => {
     }
 
     // funcion para enviar los comentarios
-    const sendComment = () =>{
+    const sendComment = async() =>{
         // Validación
         if(comment === ""){
             return alert("Falta el comentario a enviar");
@@ -35,6 +46,7 @@ const Comments = () => {
         // Envio de datos
         try{
             // Aqui va el envio del comentario
+            const envio = await clienteFrontend.post('/comments', comment);
 
             // Se llama el metodo para actualizar los comentarios
             findComments();

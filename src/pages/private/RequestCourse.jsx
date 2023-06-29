@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 
 // Componentes
 import Poll from '../../components/private/request-courses/Poll.jsx'
+import clienteFrontend from '../../config/axios.jsx';
 
 const RequestCourse = () => {
 
@@ -16,7 +17,7 @@ const RequestCourse = () => {
         document.querySelector('.title-section').textContent = "Cursos a Pedir";
 
         // Creacion de la funcion para buscar el curso
-        const findCourse = ()=>{
+        const findCourse = async()=>{
             fetch("/src/data/requestCourses.json")
                 .then(data => data.json())
                 .then(res => {
@@ -33,6 +34,9 @@ const RequestCourse = () => {
                     // Si hay data, se colocan los datos, de lo contrario, se armma un objeto
                     data !== null ? setReqCourse(data) : setReqCourse({message:"NO SE ENCUENTRA EL CURSO", error:true})
                 })
+            
+            const { data } = await clienteFrontend(`/users/courses/${params.id}`);
+            console.log(data);
         }
 
         // Invocación de la función

@@ -12,6 +12,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import clienteFrontend from "../config/axios.jsx";
 
 /////////////////////////////////////////////////////////////
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -54,9 +55,16 @@ const SignupForm = ({ setAuth }) => {
     },
     validationSchema: SignupSchema,
     onSubmit: () => {
-      setTimeout(() => {
-        setAuth(true);
-        navigate("/", { replace: true });
+      setTimeout(async() => {
+        // Averiguar porque setAuth si no esta declarado
+        // en caso de que sea necesario, descomentar la linea de codigo
+        // setAuth(true);
+
+        const result = await clienteFrontend.post('/signup', formik.values);
+
+        console.log(result);
+
+        // navigate("/", { replace: true });
       }, 2000);
     },
   });

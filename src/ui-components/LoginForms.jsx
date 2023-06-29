@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
 
 import {
   Box,
@@ -17,6 +16,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import clienteFrontend from "../config/axios.jsx";  
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 const animate = {
@@ -46,11 +46,18 @@ const LoginForm = ({ setAuth }) => {
   const handleLogin = async (data) => {
     console.log("data: ", data);
     try {
-      const result = await axios.post(
-        "http://localhost:4000/api/v1/signin",
-        data,
-      );
-      console.log("result: ", result);
+      // const result = await axios.post(
+      //   "http://localhost:4000/api/v1/signin",
+      //   data,
+      // );
+
+      const result = await clienteFrontend.post('/signin', data);
+
+
+      console.log(result.response.data.msg);
+
+
+      // console.log("result: ", result);
     } catch (error) {
       console.error(error);
     }
@@ -58,12 +65,20 @@ const LoginForm = ({ setAuth }) => {
 
   const handleGetUsers = async () => {
     try {
-      const result = await axios.get("http://localhost:4000/api/v1/users", {
+      // const result = await axios.get("http://localhost:4000/api/v1/users", {
+      //   headers: {
+      //     Authorization:
+      //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGM4MGQwNWVjM2IyNzIwZjA1MTc1YSIsImVtYWlsIjoiZXNhYXJhZmFlbEBob3RtYWlsLmNvbSIsInJvbGVzIjpbIkFkbWluIiwiU3R1ZGVudCJdLCJpYXQiOjE2ODQ0NjIzMzksImV4cCI6MTY4NDQ2NTkzOX0.Oe_Qh6xuf-L5EVsK5M_LEiZ9Tc256PFhbHVn73G6fMg",
+      //   },
+      // });
+
+      const result = await clienteFrontend.get("http://localhost:4000/api/v1/users", {
         headers: {
           Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGM4MGQwNWVjM2IyNzIwZjA1MTc1YSIsImVtYWlsIjoiZXNhYXJhZmFlbEBob3RtYWlsLmNvbSIsInJvbGVzIjpbIkFkbWluIiwiU3R1ZGVudCJdLCJpYXQiOjE2ODQ0NjIzMzksImV4cCI6MTY4NDQ2NTkzOX0.Oe_Qh6xuf-L5EVsK5M_LEiZ9Tc256PFhbHVn73G6fMg",
-        },
-      });
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGM4MGQwNWVjM2IyNzIwZjA1MTc1YSIsImVtYWlsIjoiZXNhYXJhZmFlbEBob3RtYWlsLmNvbSIsInJvbGVzIjpbIkFkbWluIiwiU3R1ZGVudCJdLCJpYXQiOjE2ODQ0NjIzMzksImV4cCI6MTY4NDQ2NTkzOX0.Oe_Qh6xuf-L5EVsK5M_LEiZ9Tc256PFhbHVn73G6fMg",
+        }
+      })
+
       console.log("result: ", result);
     } catch (error) {
       console.error(error);

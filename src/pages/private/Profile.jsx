@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import CourseCard from '../../components/private/courses/CourseCard.jsx';
+import clienteFrontend from '../../config/axios.jsx';
 
 const Profile = () => {
     
@@ -25,7 +26,7 @@ const Profile = () => {
         document.querySelector(".title-section").textContent = "Perfil";
 
         // Función para encontrar al usuario
-        const findUser =() =>{
+        const findUser = async() =>{
             fetch('/src/data/users.json')
                 .then(data => data.json())
                 .then(res => {
@@ -42,6 +43,10 @@ const Profile = () => {
                     }
                 })
                 .catch(err => console.log(err))
+
+            let id = 1;
+            const {data} = await clienteFrontend(`/users/${id}`);
+            console.log(data);
         }
 
         // Función para encontrar los cursos ya solicitados
@@ -81,7 +86,7 @@ const Profile = () => {
         });
     }
 
-    const saveProfile = () =>{
+    const saveProfile = async() =>{
 
         // Variables a utilziar
         let values = [];
@@ -120,7 +125,10 @@ const Profile = () => {
 
         // Envio de los datos
         try {
+            let id = 1;
             // Aqui va la linea de codigo de envio a la base de datos para acutalizar los datos con la variable data
+            const { data } = await clienteFrontend.patch(`/users/${id}`);
+            console.log(data);
 
             // Si se actualizaron los datos del usuario
             if(editMode){

@@ -1,12 +1,12 @@
 import { Navigation } from "../components/navigation.jsx";
 import { Header } from "../components/header.jsx";
 import { Features } from "../components/features.jsx";
-import { About } from "../components/About.jsx";
+import { About } from "../components/about.jsx";
 import { Services } from "../components/services.jsx";
 import { Gallery } from "../components/gallery.jsx";
 import { Testimonials } from "../components/testimonials.jsx";
 import { Team } from "../components/Team.jsx";
-import { Contact } from "../components/Contact.jsx";
+import { Contact } from "../components/contact.jsx";
 
 import JsonData from "../data/data.json";
 import {useState, useEffect} from 'react';

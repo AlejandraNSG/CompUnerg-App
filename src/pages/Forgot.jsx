@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import FormsForgot from "../ui-components/FormsForgot";
+import clienteFrontend from "../config/axios.jsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,15 +75,20 @@ const Forgot = () => {
     return isValid;
   };
 
-  const forgotPassword = (e) => {
+  const forgotPassword = async(e) => {
     e.preventDefault();
 
     const validate = validateforgotPassword();
 
     if (validate) {
-      alert("Reset password link is sent to " + email);
-      setValidate({});
-      setEmail("");
+      // alert("Reset password link is sent to " + email);
+
+      const result = await clienteFrontend.post('/forgot-password', email);
+
+      console.log(result);
+      
+      // setValidate({});
+      // setEmail("");
     }
   };
 

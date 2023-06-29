@@ -9,6 +9,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import clienteFrontend from "../../config/axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,7 +123,9 @@ function UploadFile() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios.get("/api/courses");
+      // const result = await axios.get("/api/courses");
+      const result = await clienteFrontend('/courses');
+
       setCourses(result.data);
     }
     fetchData();
@@ -147,22 +150,36 @@ function UploadFile() {
     formData.append("file", file);
 
     if (editing) {
-      await axios.put(`/api/courses/${currentCourse._id}`, formData, {
+      const {data} = await clienteFrontend.put(`/course/update/${currentCourse._id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+
+      console.log(data);
+      // await axios.put(`/api/courses/${currentCourse._id}`, formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
       setEditing(false);
       setCurrentCourse(null);
     } else {
-      await axios.post("/api/courses", formData, {
+
+      const {data} = await clienteFrontend.post('/course', formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      console.log(data);
+      // await axios.post("/api/courses", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
     }
 
-    const result = await axios.get("/api/courses");
+    const result = await clienteFrontend.get("/courses");
     setCourses(result.data);
     setNewCourse({ title: "", description: "", type: "" });
     setFile(null);
@@ -175,9 +192,11 @@ function UploadFile() {
   };
 
   const handleDelete = async (course) => {
-    await axios.delete(`/api/courses/${course._id}`);
+    const {data} = await clienteFrontend.delete(`/course/delete/${course._id}`);
 
-    const result = await axios.get("/api/courses");
+    console.log(data);
+
+    const result = await clienteFrontend.get("/courses");
     setCourses(result.data);
   };
 

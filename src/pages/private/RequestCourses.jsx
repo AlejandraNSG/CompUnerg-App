@@ -2,6 +2,7 @@
 import {useState, useEffect} from 'react';
 
 import ReqCourseCard from '../../components/private/request-courses/ReqCourseCard.jsx'
+import clienteFrontend from '../../config/axios.jsx';
 
 const RequestCourses = () => {
 
@@ -11,13 +12,17 @@ const RequestCourses = () => {
       // Cambio de titulo en la seccion
       document.querySelector(".title-section").textContent = "Cursos a Pedir";
 
-      const findReqCourses = () => {
+      const findReqCourses = async() => {
         fetch("http://localhost:4000/typecourse")
           .then((data) => data.json())
           .then((res) => setReqCourses(res))
           .catch((err) => console.log(err));
+        
+        const { data } = await clienteFrontend('/typecourse');
 
-        console.log(reqCourses);
+        setReqCourses(data)
+
+        console.log(data);
       };
 
       findReqCourses();
