@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CourseCard from '/src/components/private/courses/CourseCard.jsx';
+import CourseCard from '../../components/private/courses/CourseCard.jsx';
 import clienteFrontend from '../../config/axios.jsx';
 
 const Courses = () => {
@@ -30,7 +30,7 @@ const Courses = () => {
         ) : (
           <>
             <div className="not-courses">
-              <p>NO HAY CURSOS DISPONIBLES EN ESTE MOMENTO</p>
+              <p>NO HAY CURSOS SUBIDOS EN ESTE MOMENTO</p>
             </div>
           </>
         )}

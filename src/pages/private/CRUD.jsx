@@ -109,13 +109,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+    
 function UploadFile() {
   const classes = useStyles();
   const [courses, setCourses] = useState([]);
   const [newCourse, setNewCourse] = useState({
     title: "",
     description: "",
-    type: "",
+    fileName: "",
   });
   const [editing, setEditing] = useState(false);
   const [currentCourse, setCurrentCourse] = useState(null);
@@ -123,9 +124,7 @@ function UploadFile() {
 
   useEffect(() => {
     async function fetchData() {
-      // const result = await axios.get("/api/courses");
-      const result = await clienteFrontend('/courses');
-
+      const result = await clienteFrontend.get('/course');
       setCourses(result.data);
     }
     fetchData();
@@ -140,65 +139,64 @@ function UploadFile() {
     setFile(event.target.files[0]);
   };
 
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData();
     formData.append("title", newCourse.title);
     formData.append("description", newCourse.description);
-    formData.append("type", newCourse.type);
-    formData.append("file", file);
+    formData.append("courseFile", file);
 
     if (editing) {
-      const {data} = await clienteFrontend.put(`/course/update/${currentCourse._id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
+      const { data } = await clienteFrontend.put(
+        `/course/update/${currentCourse._id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log(data);
-      // await axios.put(`/api/courses/${currentCourse._id}`, formData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
+
       setEditing(false);
       setCurrentCourse(null);
     } else {
-
-      const {data} = await clienteFrontend.post('/course', formData, {
+      const { data } = await clienteFrontend.post("/course", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
       console.log(data);
-      // await axios.post("/api/courses", formData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
     }
 
     const result = await clienteFrontend.get("/courses");
     setCourses(result.data);
-    setNewCourse({ title: "", description: "", type: "" });
+    setNewCourse({ title: "", description: "", fileName: "" });
     setFile(null);
   };
+
+  
 
   const handleEdit = (course) => {
     setEditing(true);
     setCurrentCourse(course);
-    setNewCourse(course);
+    setNewCourse({ title: course.title, description: course.description, fileName: course.fileName });
   };
 
   const handleDelete = async (course) => {
-    const {data} = await clienteFrontend.delete(`/course/delete/${course._id}`);
-
+    const { data } = await clienteFrontend.delete(`/course/delete/${course._id}`);
     console.log(data);
 
     const result = await clienteFrontend.get("/courses");
     setCourses(result.data);
   };
+  
+  // ...
+
+ 
+    
 
   return (
     <div className={classes.root}>
@@ -268,6 +266,8 @@ function UploadFile() {
                   </IconButton>
                 </li>
               ))}
+
+              
             </ul>
           </Paper>
         </Grid>

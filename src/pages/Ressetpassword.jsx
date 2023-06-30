@@ -54,13 +54,7 @@ const Ressetpassword = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // const response = await fetch("/api/reset-password", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ password }),
-      // });
-      // const data = await response.json();
-
+      
       const result = await clienteFrontend.post('/reset-password', {password});
 
       console.log(result.data);
@@ -75,6 +69,9 @@ const Ressetpassword = () => {
     setPassword(event.target.value);
   };
 
+
+
+  
   return (
     <div className={classes.root}>
       <div className={classes.container}>

@@ -13,6 +13,8 @@ import { LoadingButton } from "@mui/lab";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import clienteFrontend from "../config/axios.jsx";
+import { Button, Snackbar } from "@material-ui/core";
+import { Alert as MuiAlert } from "@mui/lab";
 
 /////////////////////////////////////////////////////////////
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -26,10 +28,13 @@ const animate = {
   },
 };
 
+
 const SignupForm = ({ setAuth }) => {
   const navigate = useNavigate();
-
+  
   const [showPassword, setShowPassword] = useState(false);
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [snackbarMsg, setSnackbarMsg] = useState("");
 
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -54,22 +59,30 @@ const SignupForm = ({ setAuth }) => {
       password: "",
     },
     validationSchema: SignupSchema,
-    onSubmit: () => {
-      setTimeout(async() => {
-        // Averiguar porque setAuth si no esta declarado
-        // en caso de que sea necesario, descomentar la linea de codigo
-        // setAuth(true);
+    onSubmit: async () => {
+      setTimeout(async () => {
+        const result = await clienteFrontend.post("/signup", formik.values);
+         
 
-        const result = await clienteFrontend.post('/signup', formik.values);
+          console.log(result);
 
-        console.log(result);
-
-        // navigate("/", { replace: true });
+          // muestra el snackbar al usuario al recibir respuesta exitosa del servidor
+          setShowSnackbar(true);
+          setSnackbarMsg("Usuario registrado exitosamente");
+  
+        // redirige al usuario a la página de inicio de sesión después de 3 segundos
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
       }, 2000);
     },
   });
 
   const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
+
+
+
+
 
   return (
     <FormikProvider value={formik}>
@@ -158,9 +171,26 @@ const SignupForm = ({ setAuth }) => {
             </LoadingButton>
           </Box>
         </Stack>
+
+        {/* Agrega el componente Snackbar */}
+        <Snackbar
+          open={showSnackbar}
+          autoHideDuration={5000}
+          onClose={() => setShowSnackbar(false)}
+        >
+          <MuiAlert
+            elevation={6}
+            variant="filled"
+            onClose={() => setShowSnackbar(false)}
+            severity="success"
+          >
+            {snackbarMsg}
+          </MuiAlert>
+        </Snackbar>
       </Form>
     </FormikProvider>
   );
 };
+  
 
 export default SignupForm;

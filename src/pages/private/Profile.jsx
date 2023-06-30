@@ -27,7 +27,7 @@ const Profile = () => {
 
         // Función para encontrar al usuario
         const findUser = async() =>{
-            fetch('/src/data/users.json')
+            fetch('/')
                 .then(data => data.json())
                 .then(res => {
                     for(let i=0; i < res.length; i++){
@@ -51,7 +51,7 @@ const Profile = () => {
 
         // Función para encontrar los cursos ya solicitados
         const findCourses = () =>{
-            fetch('/src/data/courses.json')
+            fetch('')
                 .then(data => data.json())
                 .then(res => {
                     var cours = [];
@@ -271,7 +271,7 @@ const Profile = () => {
                     {/* Cursos */}
                     <div className="courses">
                         <h4>
-                            Cursos Comprados
+                            Cursos Vistos
                         </h4>
                         <div className="courses-content">
                             {

@@ -1,14 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Container, Typography, Link, Box } from "@mui/material";
 import styled from "@emotion/styled";
-
-
 import SignupForm from "../ui-components/SignupForm";
 import Logo from "../ui-components/Logo";
 import { motion } from "framer-motion";
+import clienteFrontend from "../config/axios";
+import { useNavigate } from "react-router-dom";
 
-////////////////arrecha la marica colocando las vainas donde no van //////////////////
+
+/////////////Styles//////////////////
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
   height: "100vh",
@@ -48,6 +49,33 @@ const fadeInUp = {
 };
 
 const Signup = ({ setAuth }) => {
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [setError] = useState(null); //Estado para manejar errores
+  
+  const handleSignup = async (userData) => {
+    try {
+      setIsLoading(true);
+      const response = await clienteFrontend.post("/signup", userData);
+      setIsRegistered(true);
+    } catch (error) {
+      console.error(error);
+      setError("Error al registrarse. Porfavor, intetelo de nuevo"); // establezco el mensaje de error
+    } finally {
+      setIsLoading(false);
+      }
+  };
+
+  if (isLoading) {
+    return <div> Cargando .... </div> 
+  }
+
+  const navigate = useNavigate();
+  if (isRegistered) {
+    navigate("/login?registrationSuccess=true");
+    return null;
+  }
+
   return (
     <RootStyle>
       <Container maxWidth="sm">
@@ -60,9 +88,6 @@ const Signup = ({ setAuth }) => {
             </Typography>
           </HeadingStyle>
 
-        
-
-             
           <SignupForm setAuth={setAuth} />
 
           <Typography
@@ -72,7 +97,7 @@ const Signup = ({ setAuth }) => {
             align="center"
             sx={{ color: "text.secondary", mt: 2 }}
           >
-            Al registrarme, Acepto {" "}
+            Al registrarme, Acepto{" "}
             <Link underline="always" color="text.primary" href="#">
               Terminos del Servicio
             </Link>{" "}

@@ -1,7 +1,9 @@
+import Courses from "../../../pages/private/Courses";
+
 // eslint-disable-next-line react/prop-types
 const CourseCard = ({ course }) => {
   // eslint-disable-next-line react/prop-types
-  const { title, description } = course;
+  const { title, description } = Courses;
 
   return (
     <>

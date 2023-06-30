@@ -75,22 +75,23 @@ const Forgot = () => {
     return isValid;
   };
 
-  const forgotPassword = async(e) => {
+  const forgotPassword = async (e) => {
     e.preventDefault();
 
-    const validate = validateforgotPassword();
+    const isValid = validateforgotPassword();
 
-    if (validate) {
-      // alert("Reset password link is sent to " + email);
+    if (isValid) {
+      alert("Reset password link is sent to " + email);
 
-      const result = await clienteFrontend.post('/forgot-password', email);
+      const result = await clienteFrontend.post("/forgot-password", { email });
 
       console.log(result);
-      
-      // setValidate({});
-      // setEmail("");
+
+      setValidate({});
+      setEmail("");
     }
   };
+  
 
   return (
     <div className={classes.root}>
@@ -138,6 +139,9 @@ const Forgot = () => {
               </div>
             </form>
 
+
+            
+            
             <hr />
             <div className="auth-option text-center pt-2">
               <Link className="text-link" to="/">

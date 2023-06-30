@@ -46,6 +46,10 @@
     padding:25px 5px;
 }
 
+.comment-content-input {
+  color: black;
+}
+
 .comment-content-input div{
     display: flex;
     align-items: center;
@@ -56,6 +60,7 @@
 .comment-content-input div textarea{
     width: 100%;
     resize: none;
+      color: black;
 }
 
 .comment-content-input div .sendComment{
